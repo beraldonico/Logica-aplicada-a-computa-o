@@ -1,0 +1,54 @@
+1)
+pai(adao,cain).
+pai(adao,abel).
+pai(adao,seth).
+pai(seth,enos).
+avo(Q,W):-pai(Q,E),pai(E,W).
+irmao(Q,W):-pai(E,W),pai(E,Q), Q\=W.
+
+a)pai(adao,Q).
+
+b)avo(adao,W).
+
+c)irmao(Q,W),irmao(Q,E),pai(W,enos),W\=E.
+
+2) a) e b)
+pai(ivo,eva).
+pai(gil,rai).
+pai(gil,clo).
+pai(rai,noe).
+pai(ary,gal).
+pai(gil,ary).
+mae(bia,rai).
+mae(bia,clo).
+mae(bia,ary).
+mae(eva,noe).
+mae(lia,gal).
+mae(ana,eva).
+homem(ivo).
+homem(rai).
+homem(noe).
+homem(gil).
+homem(ary).
+mulher(ana).
+mulher(eva).
+mulher(bia).
+mulher(clo).
+mulher(lia).
+mulher(gal).
+
+c) 
+gerou(Q,W):-mae(Q,W),mulher(Q).
+gerou(Q,W):-pai(Q,W),homem(Q).
+
+d)
+filho(Q,W):-pai(W,Q),homem(Q).
+filha(Q,W):-mae(W,Q),mulher(Q).
+avop(Q,W):-pai(Q,E),pai(E,W). avô paterno
+avap(Q,W):-mae(Q,E),pai(E,W). avó paterno
+avam(Q,W):-mae(Q,E),mae(E,W). avó materno
+avom(Q,W):-pai(Q,E),mae(E,W). avô materno
+tio(Q,W):-pai(E,W),pai(R,E),pai(R,Q).
+tia(Q,W):-mae(E,W),mae(R,E),mae(R,Q).
+primo(Q,W):-pai(E,W),pai(R,E),pai(R,T),pai(T,Q),Q\=W.
+prima(Q,W):-mae(E,W),mae(R,E),mae(R,T),mae(T,Q),Q\=W.

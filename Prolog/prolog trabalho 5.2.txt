@@ -1,0 +1,25 @@
+Lucas Gauer e Nicolas Berado
+1
+a)
+ultimo([Y|[]],Y).
+ultimo([_|X],S) :- ultimo(X,S).
+	
+b)
+tam([],0).
+tam([_|A],N) :- tam(A,T), N is T+1.
+
+c)
+soma([],0).
+soma([A|B],S) :- soma(B,Z), S is Z+A.
+
+d)
+max([X],X).
+max([Y|R],M) :- max(R,M), M>Y, !.
+max([Y|_],Y).
+
+e)
+inverter(X,Y):- aux([],X,Y).
+aux(L,[],L).
+aux(L,[X|Y],Z):-aux([X|L],Y,Z).
+
+f)

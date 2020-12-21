@@ -1,0 +1,33 @@
+Lucas Gauer e Nicolas Beraldo
+1)
+multi(_,0,0).
+multi(0,_,0).
+multi(A,B,C):-
+    B>0,
+    M is B-1,
+    multi(A,M,S),
+    C is A+S.
+
+2)
+bin(0,0).
+bin(1,1).
+bin(A,B):-
+    A//2=\=0,
+    C is A//2,
+    bin(C,D),
+    B is 10*D + A mod 2.
+
+3)
+a)
+estrada(a,b,25).
+estrada(a,d,23).
+estrada(b,e,32).
+estrada(b,c,19).
+estrada(c,d,14).
+estrada(c,f,28).
+estrada(d,f,30).
+estrada(e,f,26).
+
+b)
+dist(A,B,D):-estrada(A,B,D).
+dist(A,B,D):-estrada(A,C,X), dist(C,B,Y), D is X+Y.

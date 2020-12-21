@@ -1,0 +1,33 @@
+1)as alternativas sao igualmente eficientes, em ambos os casos dependemos da informacao 
+de que leo joga tennis, entao nao importa a ordem.
+
+2)Porque a falta do corte faz com que o programa continue buscando as informacoes apos
+achar o resultado verdadeiro, com a insercao do corte apos a resposta verdaeira ser encontrada
+o programa termina ja que nao ha mais a necessidade procurar outra respostas
+num(N,positivo) :- N>0,!.
+num(N,nulo):- N=:=0,!.
+num(N,negativo) :- N<0.
+
+3)lingua(frances).
+lingua(alemao).
+lingua(italiano).
+lingua(romanche).
+lingua(ingles).
+fala(alemanha,alemao).
+fala(franca,frances).
+fala(italia,italiano).
+fala(canada,ingles).
+fala(canada,frances).
+fala(eua,ingles).
+fala(congo,frances).
+fala(suica,frances).
+fala(suica,alemao).
+fala(suica,romanche).
+fala(suica,italiano).
+
+a)falafrancês
+	?- fala(X,frances),write([X]),nl,fail.
+b)linguacanada
+	?-fala(canada,Y),write([Y]),nl,fail.
+c)linguasuica
+	?-fala(suica,Y),write([Y]),nl,fail.

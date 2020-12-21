@@ -1,0 +1,67 @@
+1)
+%pais P,área A,população H
+pais(brasil,9,130).
+pais(china,12,1800).
+pais(eua,9,230).
+pais(india,3,450).
+dens(P,D):-pais(P,A,H), D is H/A.
+
+a)
+?-pais(brasil,D)
+?-pais(china,D)
+?-pais(eua,D)
+?-pais(india,D)
+
+b)
+?-pais(india,_,X), pais(china,_,Y), X>Y
+
+2)
+%código C,nome N,salário S
+func(1,ana,1000.90).
+func(2,bia,1200.00).
+func(3,ivo,903.50).
+func(4,leo,2500.35).
+func(5,clô,1800.00).
+func(6,gil,1100.00).
+
+%código C,nome do dependente D
+dep(1,ary).
+dep(3,raí).
+dep(3,eva).
+dep(4,lia).
+dep(4,noé).
+dep(5,eli).
+
+?-func(C,N,S), S>1500,S<3000
+?-func(C,N,S), S<1200,  \+dep(C,_)
+?-func(C,_,S), dep(C,N), S>1700
+
+3)
+%título,gênero,ano,duração
+filme('Uma linda mulher',romance,1990,119).
+filme('Sexto sentido',suspense,2001,108).
+filme('A cor púrpura',drama,1985,152).
+filme('Copcabana',comédia,2001,92).
+filme('E o vento levou',drama,1939,233).
+filme('Carrington',romance,1995,130).
+
+a)
+longo(T,_,_,D):- filme(T,G,A,D), D>150 
+b)
+lancamento(T,A):-filme(T,_,A,_), A>2000.
+
+4)
+%nome,sexo,idade,altura,peso
+pessoa(ana,feminino,23,1.55,56.0).
+pessoa(bia,feminino,19,1.71,61.3).
+pessoa(ivo,masculino,22,1.80,70.5).
+pessoa(lia,feminino,17,1.85,57.3).
+pessoa(eva,feminino,28,1.75,68.7).
+pessoa(ary,masculino,25,1.72,68.9).
+
+a)
+?-pessoa(N,feminino,I,_,_),I>20
+b)
+?-pessoa(N,_,_,A,P), A>=1.70,P<65
+c)
+?-pessoa(H,masculino,_,A,_),pessoa(M,feminino,_,I,_),A>I.
